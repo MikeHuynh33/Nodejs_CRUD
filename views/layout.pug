@@ -8,6 +8,8 @@ html
     meta(name="theme-color", content="#000000")
     link(rel="stylesheet", href="/css/index.css")
     title #{title}
+    block scripts
+        script(src="/js/index.js")
   body
     div#root
       block header-content

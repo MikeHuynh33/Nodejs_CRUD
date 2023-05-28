@@ -1,0 +1,12 @@
+extends layout
+
+block main-content
+    h1 Add New Employee
+    h2 #{error}
+    div.flex_container
+        form(action="/Add/NewEmployee" method="POST") 
+            p First Name:
+                input(type='text', name='fName', value='')
+            p Last Name:
+                input(type='text', name='lName', value='')
+            input(type='submit', value="Submit")

@@ -1,0 +1,12 @@
+extends layout
+
+block main-content
+    h1 Edit Employee
+    div.flex_container
+        form(action="/Edit/Comfirmed" method="POST") 
+            p First Name:
+                input(type='text', name='fName', value=oneEmployee.fname)
+            p Last Name:
+                input(type='text', name='lName', value=oneEmployee.lname)
+                input(type='hidden', name='id', value=oneEmployee._id)
+            input(type='submit', value="Edit")

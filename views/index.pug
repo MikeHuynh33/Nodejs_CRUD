@@ -1,13 +1,19 @@
 extends layout
 
 block header-content
-    h1 Welcome to my homepage
-
+    h1 Employee List 
+        a(class="btn_add" href="/Add") +
 block main-content
-    h1 This body of homepage 
-    p insert whatever u want
-block scripts append
-    script(src="/js/index2.js")
-block footer-content 
-    h1 This footer of homepage 
-    p insert whatever u want
+    div.flexContainer
+        each emp in employee
+            div.flex_item
+                div.fname #{emp.fname} 
+                div.lname #{emp.lname} 
+                div.btn
+                    form(action="/Delete")
+                        input(type="hidden" name="empId" value=emp._id)
+                        button.btn_delete delete
+                    form(action="/Edit")
+                        input(type="hidden" name="empId" value=emp._id)
+                        button.btn_edit edit 
+                    
